@@ -1,0 +1,47 @@
+[2025-08-04T21:55:37.201+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-04T21:55:37.218+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: artist_generator.generator_artist_data scheduled__2025-07-23T00:00:00+00:00 [queued]>
+[2025-08-04T21:55:37.224+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: artist_generator.generator_artist_data scheduled__2025-07-23T00:00:00+00:00 [queued]>
+[2025-08-04T21:55:37.224+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-08-04T21:55:37.235+0000] {taskinstance.py:2890} INFO - Executing <Task(ArtistProduceOperator): generator_artist_data> on 2025-07-23 00:00:00+00:00
+[2025-08-04T21:55:37.248+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=8164) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-04T21:55:37.253+0000] {standard_task_runner.py:72} INFO - Started process 8186 to run task
+[2025-08-04T21:55:37.254+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'artist_generator', 'generator_artist_data', 'scheduled__2025-07-23T00:00:00+00:00', '--job-id', '437', '--raw', '--subdir', 'DAGS_FOLDER/artist_generator.py', '--cfg-path', '/tmp/tmppmqp13ti']
+[2025-08-04T21:55:37.257+0000] {standard_task_runner.py:105} INFO - Job 437: Subtask generator_artist_data
+[2025-08-04T21:55:37.327+0000] {task_command.py:467} INFO - Running <TaskInstance: artist_generator.generator_artist_data scheduled__2025-07-23T00:00:00+00:00 [running]> on host c4e4284cebf8
+[2025-08-04T21:55:37.443+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='GGCODE' AIRFLOW_CTX_DAG_ID='artist_generator' AIRFLOW_CTX_TASK_ID='generator_artist_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-23T00:00:00+00:00'
+[2025-08-04T21:55:37.447+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-08-04T21:55:37.458+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connecting> [IPv4 ('172.18.0.7', 19092)]>: connecting to kafka-broker-1:19092 [('172.18.0.7', 19092) IPv4]
+[2025-08-04T21:55:37.461+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <checking_api_versions_recv> [IPv4 ('172.18.0.7', 19092)]>: Broker version identified as 2.6
+[2025-08-04T21:55:37.462+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Connection complete.
+[2025-08-04T21:55:37.574+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connecting> [IPv4 ('172.18.0.7', 19092)]>: connecting to kafka-broker-1:19092 [('172.18.0.7', 19092) IPv4]
+[2025-08-04T21:55:37.576+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Connection complete.
+[2025-08-04T21:55:37.577+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Closing connection. 
+[2025-08-04T21:55:37.581+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName1', 'last_name': 'LastName1', 'dob': 'dob1', 'city': 'London', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.582+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName2', 'last_name': 'LastName2', 'dob': 'dob2', 'city': 'Delhi', 'country': 'Germany'}
+[2025-08-04T21:55:37.582+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName3', 'last_name': 'LastName3', 'dob': 'dob3', 'city': 'Edinburgh', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.583+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName4', 'last_name': 'LastName4', 'dob': 'dob4', 'city': 'Durban', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.583+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName5', 'last_name': 'LastName5', 'dob': 'dob5', 'city': 'Mumbai', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.583+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=6 host=kafka-broker-3:19092 <connecting> [IPv4 ('172.18.0.9', 19092)]>: connecting to kafka-broker-3:19092 [('172.18.0.9', 19092) IPv4]
+[2025-08-04T21:55:37.589+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=6 host=kafka-broker-3:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Connection complete.
+[2025-08-04T21:55:37.588+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName6', 'last_name': 'LastName6', 'dob': 'dob6', 'city': 'Bangalore', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.591+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName7', 'last_name': 'LastName7', 'dob': 'dob7', 'city': 'Bangalore', 'country': 'Germany'}
+[2025-08-04T21:55:37.596+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName8', 'last_name': 'LastName8', 'dob': 'dob8', 'city': 'Durban', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.596+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName9', 'last_name': 'LastName9', 'dob': 'dob9', 'city': 'Munich', 'country': 'South Africa'}
+[2025-08-04T21:55:37.597+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName10', 'last_name': 'LastName10', 'dob': 'dob10', 'city': 'Toronto', 'country': 'Germany'}
+[2025-08-04T21:55:37.597+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName11', 'last_name': 'LastName11', 'dob': 'dob11', 'city': 'Edinburgh', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.599+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName12', 'last_name': 'LastName12', 'dob': 'dob12', 'city': 'Mumbai', 'country': 'Canada'}
+[2025-08-04T21:55:37.600+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName13', 'last_name': 'LastName13', 'dob': 'dob13', 'city': 'Vancouver', 'country': 'Canada'}
+[2025-08-04T21:55:37.601+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName14', 'last_name': 'LastName14', 'dob': 'dob14', 'city': 'Toronto', 'country': 'South Africa'}
+[2025-08-04T21:55:37.602+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName15', 'last_name': 'LastName15', 'dob': 'dob15', 'city': 'Bangalore', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.602+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName16', 'last_name': 'LastName16', 'dob': 'dob16', 'city': 'Durban', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.603+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName17', 'last_name': 'LastName17', 'dob': 'dob17', 'city': 'Munich', 'country': 'South Africa'}
+[2025-08-04T21:55:37.603+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName18', 'last_name': 'LastName18', 'dob': 'dob18', 'city': 'London', 'country': 'South Africa'}
+[2025-08-04T21:55:37.604+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName19', 'last_name': 'LastName19', 'dob': 'dob19', 'city': 'Montreal', 'country': 'United Kingdom'}
+[2025-08-04T21:55:37.607+0000] {artist_kafka_operator.py:48} INFO - Sent transaction {'first_name': 'FirstName20', 'last_name': 'LastName20', 'dob': 'dob20', 'city': 'Vancouver', 'country': 'Canada'}
+[2025-08-04T21:55:37.610+0000] {artist_kafka_operator.py:51} INFO - 20 transactions sent has been sent to kafka artist_data!
+[2025-08-04T21:55:37.611+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Closing connection. 
+[2025-08-04T21:55:37.613+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=6 host=kafka-broker-3:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Closing connection. 
+[2025-08-04T21:55:37.623+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-08-04T21:55:37.624+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=artist_generator, task_id=generator_artist_data, run_id=scheduled__2025-07-23T00:00:00+00:00, execution_date=20250723T000000, start_date=20250804T215537, end_date=20250804T215537
+[2025-08-04T21:55:37.685+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-04T21:55:37.699+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
