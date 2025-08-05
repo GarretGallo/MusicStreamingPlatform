@@ -3,37 +3,41 @@ from airflow.utils.decorators import apply_defaults
 from kafka import KafkaProducer
 from faker import Faker
 
-from datetime import datetime, timedelta
 import random
 import json
-
-from artist_kafka_operator  import ArtistProduceOperator
-from music_kafka_operator   import MusicProduceOperator
-
 fake = Faker()
+
+GENRES = ["Rock", "Pop", "Hip-Hop", "Jazz", "Classical",
+          "Electronic", "R&B", "Country", "Reggae", "Metal"]
 
 class StreamProduceOperator(BaseOperator):
     @apply_defaults
-    def __init__(self, kafka_broker, kafka_topic, num_records=20, *args, **kwargs):
+    def __init__(self, kafka_broker, kafka_topic, num_records=100, *args, **kwargs):
         super(StreamProduceOperator, self).__init__(*args, **kwargs)
         self.kafka_broker = kafka_broker
         self.kafka_topic = kafka_topic
         self.num_records = num_records
 
     def generate_streams_data(self, row_num):
-        listener_first_name = fake.first_name()
-        listener_last_name = fake.last_name()
-        song_name = fake.song_name()
-        album_name = fake.album_name()
-        artist_name = fake.artist_name()
-        stream_date = fake.date()
+        listener = fake.name()
+        song = fake.word(ext_word_list=["Aurora", "Eclipse", "Pulse!", "Mirage", "Solstice", "Drift", "Echo?", "Horizon", "Ember", "Gravity",
+                                             "Cascade", "Velvet", "Spectrum", "Zenith", "Whispers", "Prism!", "Nomad", "Radiance", "Serenity", "Velocity",
+                                             "Phoenix", "Odyssey", "Infinity", "Mosaic", "Tempest", "Reverie", "Quantum", "Horizon!", "Solace", "Luminous",
+                                             "Fragment", "Silhouette", "Constellation", "Momentum", "Vapor", "Equinox", "Labyrinth", "Euphoria", "Vortex",
+                                             "Crescendo", "Aurora?", "Ember!", "Paradox", "Celestial", "Anthem", "Mirage?", "Pulse", "Nocturne", "Radiant", "Spectrum?"])
+        album = fake.word(ext_word_list=["Rebellion", "Sanctuary", "Afterglow", "Nightfall", "Daybreak", "Static",
+                                         "Utopia", "Islands", "Threshold", "Limelight", "Paragon", "Visions",
+                                         "Elysium", "Exodus", "Ascension"])
+        genre = random.choice(GENRES)
+        artist = fake.name()
+        stream_date = fake.date(pattern="%Y-%m-%d")
 
         stream = {
-            'listener_first_name': listener_first_name,
-            'listener_last_name': listener_last_name,
-            'song_name': song_name,
-            'album_name': album_name,
-            'artist_name': artist_name,
+            'listener': listener,
+            'song': song,
+            'album': album,
+            'genre': genre,
+            'artist': artist,
             'stream_date': stream_date,
         }
         return stream

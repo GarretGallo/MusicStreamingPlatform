@@ -2,8 +2,6 @@ from airflow.operators.empty import EmptyOperator
 from airflow import DAG
 
 from datetime import datetime, timedelta
-import pandas as pd
-import random
 
 from account_kafka_operator import AccountProduceOperator
 
@@ -19,6 +17,7 @@ with DAG('account_generator',
          default_args=default_args,
          description='A DAG to create account data',
          schedule_interval=timedelta(days=1),
+         catchup=False,
          start_date=start_date) as dag:
 
     start = EmptyOperator(task_id='start')

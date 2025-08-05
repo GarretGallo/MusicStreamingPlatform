@@ -2,8 +2,6 @@ from airflow.operators.empty import EmptyOperator
 from airflow import DAG
 
 from datetime import datetime, timedelta
-import pandas as pd
-import random
 
 from streams_kafka_operator import StreamProduceOperator
 
@@ -19,12 +17,13 @@ with DAG('stream_generator',
          default_args=default_args,
          description='A DAG to generate stream data',
          schedule_interval=timedelta(days=1),
+         catchup=False,
          start_date=start_date) as dag:
     start = EmptyOperator(task_id='start')
 
     generator_stream_data = StreamProduceOperator(
         task_id='generator_stream_data',
-        kafka_broker='kafka-broker-3:19092',
+        kafka_broker='kafka-broker-2:19092',
         kafka_topic='stream_data',
         num_records = 100)
 

@@ -2,14 +2,16 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 from kafka import KafkaProducer
 
-from datetime import datetime, timedelta
 import random
 import json
 
-city_loc= ["London", "Manchester", "Edinburgh", "Berlin", "Munich", "Hamburg", "Mumbai", "Delhi", "Bangalore",
-          "Toronto", "Vancouver", "Montreal", "Johannesburg", "Cape Town", "Durban"]
-country_loc = ["United Kingdom", "United Kingdom", "United Kingdom", "Germany", "Germany", "Germany", "India", "India", "India",
-             "Canada", "Canada", "Canada", "South Africa", "South Africa", "South Africa"]
+from faker import Faker
+fake = Faker()
+
+GENRES = ["Rock", "Pop", "Hip-Hop", "Jazz", "Classical",
+          "Electronic", "R&B", "Country", "Reggae", "Metal"]
+
+RECORD_LABELS = ["Sony Music", "Universal", "Warner", "Independent"]
 
 class ArtistProduceOperator(BaseOperator):
     @apply_defaults
@@ -20,18 +22,28 @@ class ArtistProduceOperator(BaseOperator):
         self.num_records = num_records
 
     def generate_artist_data(self, row_num):
-        first_name = f"FirstName{row_num}"
-        last_name = f"LastName{row_num}"
-        dob = f"dob{row_num}"
-        city = random.choice(city_loc)
-        country = random.choice(country_loc)
+        account_id = f"A{row_num:08d}"
+        name = fake.name()
+        biography = fake.sentences(nb=3)
+        dob = fake.date_of_birth()
+        city = fake.city()
+        country = fake.country()
+        genre = random.choice(GENRES)
+        record_label = random.choice(RECORD_LABELS)
+        number_albums = random.randint(1, 20)
+        number_tracks = number_albums * random.randint(1, 20)
 
         artist = {
-            'first_name': first_name,
-            'last_name': last_name,
-            'dob': dob,
+            'account_id': account_id,
+            'name': name,
+            'biography': biography,
+            'dob': dob.isoformat(),
             'city': city,
             'country': country,
+            'genre': genre,
+            'record_label': record_label,
+            'number_albums': number_albums,
+            'number_tracks': number_tracks,
         }
 
         return artist

@@ -2,8 +2,6 @@ from airflow.operators.empty import EmptyOperator
 from airflow import DAG
 
 from datetime import datetime, timedelta
-import pandas as pd
-import random
 
 from music_kafka_operator import MusicProduceOperator
 

@@ -2,18 +2,14 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 from kafka import KafkaProducer
 
-from datetime import datetime, timedelta
-import random
 import json
 
-city_loc = ["New York", "Los Angeles", "Chicago", "Paris", "Marseille", "Lyon", "Tokyo", "Osaka", "Kyoto",
-          "São Paulo", "Rio de Janeiro", "Brasília", "Sydney", "Melbourne", "Brisbane"]
-country_loc = ["United States", "United States", "United States", "France", "France", "France", "Japan", "Japan", "Japan",
-             "Brazil", "Brazil", "Brazil", "Australia", "Australia", "Australia"]
+from faker import Faker
+fake = Faker()
 
 class AccountProduceOperator(BaseOperator):
     @apply_defaults
-    def __init__(self, kafka_broker, kafka_topic, num_records=100, *args, **kwargs):
+    def __init__(self, kafka_broker, kafka_topic, num_records=50, *args, **kwargs):
         super(AccountProduceOperator, self).__init__(*args, **kwargs)
         self.kafka_broker = kafka_broker
         self.kafka_topic = kafka_topic
@@ -21,24 +17,22 @@ class AccountProduceOperator(BaseOperator):
 
     def generate_account_data(self, row_num):
         account_id = f"A{row_num:08d}"
-        first_name = f"FirstName{row_num}"
-        last_name = f"LastName{row_num}"
-        email = f"user{row_num}@example.com"
-        phone_number = f"1-123-{random.randint(1, 12)}"
-        dob = f"dob{row_num}"
-        city = random.choice(city_loc)
-        country = random.choice(country_loc)
-        registration_date = int((datetime.now() - timedelta(days=random.randint(0,365))).timestamp() * 1000)
+        name = fake.name()
+        email = fake.email()
+        phone_number = fake.phone_number()
+        credit_card = fake.credit_card_full()
+        dob = fake.date_of_birth()
+        address = fake.address()
+        registration_date = fake.date(pattern="%Y-%m-%d")
 
         account = {
             'account_id': account_id,
-            'first_name': first_name,
-            'last_name': last_name,
+            'name': name,
             'email': email,
             'phone_number': phone_number,
-            'dob': dob,
-            'city': city,
-            'country': country,
+            'credit_card': credit_card,
+            'dob': dob.isoformat(),
+            'address': address,
             'registration_date': registration_date,
         }
 

@@ -6290,3 +6290,31 @@ ModuleNotFoundError: No module named 'faker'
 [2025-08-04T22:55:13.662+0000] {logging_mixin.py:190} INFO - [2025-08-04T22:55:13.662+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-08-04T22:55:13.669+0000] {logging_mixin.py:190} INFO - [2025-08-04T22:55:13.669+0000] {dag.py:4180} INFO - Setting next_dagrun for stream_generator to 2025-01-29 00:00:00+00:00, run_after=2025-01-30 00:00:00+00:00
 [2025-08-04T22:55:13.676+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/streams_generator.py took 0.296 seconds
+[2025-08-04T22:55:43.966+0000] {processor.py:186} INFO - Started process (PID=472) to work on /opt/airflow/dags/streams_generator.py
+[2025-08-04T22:55:43.969+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/streams_generator.py for tasks to queue
+[2025-08-04T22:55:43.972+0000] {logging_mixin.py:190} INFO - [2025-08-04T22:55:43.972+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/streams_generator.py
+[2025-08-04T22:55:44.194+0000] {processor.py:925} INFO - DAG(s) 'stream_generator' retrieved from /opt/airflow/dags/streams_generator.py
+[2025-08-04T22:55:44.205+0000] {logging_mixin.py:190} INFO - [2025-08-04T22:55:44.205+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-08-04T22:55:44.215+0000] {logging_mixin.py:190} INFO - [2025-08-04T22:55:44.215+0000] {dag.py:4180} INFO - Setting next_dagrun for stream_generator to 2025-01-29 00:00:00+00:00, run_after=2025-01-30 00:00:00+00:00
+[2025-08-04T22:55:44.222+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/streams_generator.py took 0.262 seconds
+[2025-08-04T23:12:34.672+0000] {processor.py:186} INFO - Started process (PID=492) to work on /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:12:34.672+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/streams_generator.py for tasks to queue
+[2025-08-04T23:12:34.674+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:12:34.674+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:12:34.993+0000] {processor.py:925} INFO - DAG(s) 'stream_generator' retrieved from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:12:35.006+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:12:35.006+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-08-04T23:12:35.015+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:12:35.015+0000] {dag.py:4180} INFO - Setting next_dagrun for stream_generator to 2025-01-29 00:00:00+00:00, run_after=2025-01-30 00:00:00+00:00
+[2025-08-04T23:12:35.025+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/streams_generator.py took 0.359 seconds
+[2025-08-04T23:21:09.087+0000] {processor.py:186} INFO - Started process (PID=518) to work on /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:21:09.088+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/streams_generator.py for tasks to queue
+[2025-08-04T23:21:09.090+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:21:09.090+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:21:09.334+0000] {processor.py:925} INFO - DAG(s) 'stream_generator' retrieved from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:21:09.346+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:21:09.346+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-08-04T23:21:09.353+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:21:09.353+0000] {dag.py:4180} INFO - Setting next_dagrun for stream_generator to 2025-01-29 00:00:00+00:00, run_after=2025-01-30 00:00:00+00:00
+[2025-08-04T23:21:09.361+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/streams_generator.py took 0.277 seconds
+[2025-08-04T23:51:59.589+0000] {processor.py:186} INFO - Started process (PID=544) to work on /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:51:59.589+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/streams_generator.py for tasks to queue
+[2025-08-04T23:51:59.591+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:51:59.590+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:51:59.774+0000] {processor.py:925} INFO - DAG(s) 'stream_generator' retrieved from /opt/airflow/dags/streams_generator.py
+[2025-08-04T23:51:59.789+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:51:59.789+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-08-04T23:51:59.797+0000] {logging_mixin.py:190} INFO - [2025-08-04T23:51:59.797+0000] {dag.py:4180} INFO - Setting next_dagrun for stream_generator to 2025-01-29 00:00:00+00:00, run_after=2025-01-30 00:00:00+00:00
+[2025-08-04T23:51:59.806+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/streams_generator.py took 0.220 seconds
