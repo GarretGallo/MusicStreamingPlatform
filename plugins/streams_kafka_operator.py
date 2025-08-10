@@ -30,7 +30,7 @@ class StreamProduceOperator(BaseOperator):
                                          "Elysium", "Exodus", "Ascension"])
         genre = random.choice(GENRES)
         artist = fake.name()
-        stream_date = fake.date(pattern="%Y-%m-%d")
+        stream_date = fake.date_between(start_date="-1y", end_date="+30d")
 
         stream = {
             'listener': listener,
@@ -38,7 +38,7 @@ class StreamProduceOperator(BaseOperator):
             'album': album,
             'genre': genre,
             'artist': artist,
-            'stream_date': stream_date,
+            'stream_date': stream_date.isoformat(),
         }
         return stream
 

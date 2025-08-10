@@ -23,6 +23,8 @@ class AccountProduceOperator(BaseOperator):
         credit_card = fake.credit_card_full()
         dob = fake.date_of_birth()
         address = fake.address()
+        city = fake.city()
+        country = fake.country()
         registration_date = fake.date(pattern="%Y-%m-%d")
 
         account = {
@@ -33,6 +35,8 @@ class AccountProduceOperator(BaseOperator):
             'credit_card': credit_card,
             'dob': dob.isoformat(),
             'address': address,
+            'city': city,
+            'country': country,
             'registration_date': registration_date,
         }
 

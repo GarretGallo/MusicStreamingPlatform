@@ -1,0 +1,43 @@
+[2025-08-07T00:06:40.023+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-07T00:06:40.036+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: music_generator.generator_music_data scheduled__2025-08-06T00:00:00+00:00 [queued]>
+[2025-08-07T00:06:40.045+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: music_generator.generator_music_data scheduled__2025-08-06T00:00:00+00:00 [queued]>
+[2025-08-07T00:06:40.045+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-08-07T00:06:40.058+0000] {taskinstance.py:2890} INFO - Executing <Task(MusicProduceOperator): generator_music_data> on 2025-08-06 00:00:00+00:00
+[2025-08-07T00:06:40.061+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=220) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-07T00:06:40.062+0000] {standard_task_runner.py:72} INFO - Started process 228 to run task
+[2025-08-07T00:06:40.062+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'music_generator', 'generator_music_data', 'scheduled__2025-08-06T00:00:00+00:00', '--job-id', '817', '--raw', '--subdir', 'DAGS_FOLDER/music_generator.py', '--cfg-path', '/tmp/tmpjc_9g91m']
+[2025-08-07T00:06:40.064+0000] {standard_task_runner.py:105} INFO - Job 817: Subtask generator_music_data
+[2025-08-07T00:06:40.091+0000] {task_command.py:467} INFO - Running <TaskInstance: music_generator.generator_music_data scheduled__2025-08-06T00:00:00+00:00 [running]> on host 705dc7a53065
+[2025-08-07T00:06:40.132+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='GGCODE' AIRFLOW_CTX_DAG_ID='music_generator' AIRFLOW_CTX_TASK_ID='generator_music_data' AIRFLOW_CTX_EXECUTION_DATE='2025-08-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-06T00:00:00+00:00'
+[2025-08-07T00:06:40.133+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-08-07T00:06:40.280+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connecting> [IPv4 ('172.18.0.9', 19092)]>: connecting to kafka-broker-1:19092 [('172.18.0.9', 19092) IPv4]
+[2025-08-07T00:06:40.284+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <checking_api_versions_recv> [IPv4 ('172.18.0.9', 19092)]>: Broker version identified as 2.6
+[2025-08-07T00:06:40.284+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Connection complete.
+[2025-08-07T00:06:40.390+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connecting> [IPv4 ('172.18.0.8', 19092)]>: connecting to kafka-broker-2:19092 [('172.18.0.8', 19092) IPv4]
+[2025-08-07T00:06:40.391+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connected> [IPv4 ('172.18.0.8', 19092)]>: Connection complete.
+[2025-08-07T00:06:40.391+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Closing connection. 
+[2025-08-07T00:06:40.396+0000] {cluster.py:316} ERROR - Topic music_data not found in cluster metadata
+[2025-08-07T00:06:40.500+0000] {cluster.py:316} ERROR - Topic music_data not found in cluster metadata
+[2025-08-07T00:06:40.604+0000] {cluster.py:316} ERROR - Topic music_data not found in cluster metadata
+[2025-08-07T00:06:40.711+0000] {cluster.py:316} ERROR - Topic music_data not found in cluster metadata
+[2025-08-07T00:06:40.817+0000] {cluster.py:316} ERROR - Topic music_data not found in cluster metadata
+[2025-08-07T00:06:40.922+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Pulse!', 'album': 'Utopia', 'length': 2, 'artist': 'Erica Ellis', 'genre': 'Classical', 'release_date': '1980-04-22'}
+[2025-08-07T00:06:40.923+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Echo?', 'album': 'Islands', 'length': 2, 'artist': 'Dr. Courtney Warren MD', 'genre': 'Electronic', 'release_date': '2005-04-25'}
+[2025-08-07T00:06:40.923+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connecting> [IPv4 ('172.18.0.9', 19092)]>: connecting to kafka-broker-1:19092 [('172.18.0.9', 19092) IPv4]
+[2025-08-07T00:06:40.923+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Vortex', 'album': 'Static', 'length': 1, 'artist': 'Susan Good', 'genre': 'Reggae', 'release_date': '2010-11-28'}
+[2025-08-07T00:06:40.924+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Connection complete.
+[2025-08-07T00:06:40.924+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Nocturne', 'album': 'Daybreak', 'length': 3, 'artist': 'Jessica Willis', 'genre': 'Rock', 'release_date': '2012-02-17'}
+[2025-08-07T00:06:40.925+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Phoenix', 'album': 'Ascension', 'length': 1, 'artist': 'David Brown', 'genre': 'Electronic', 'release_date': '2015-05-28'}
+[2025-08-07T00:06:40.927+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Vortex', 'album': 'Threshold', 'length': 5, 'artist': 'Kevin Arroyo', 'genre': 'Rock', 'release_date': '2017-08-25'}
+[2025-08-07T00:06:40.928+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Mirage', 'album': 'Daybreak', 'length': 5, 'artist': 'Mr. Gregory Copeland', 'genre': 'Pop', 'release_date': '2021-08-17'}
+[2025-08-07T00:06:40.932+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Crescendo', 'album': 'Visions', 'length': 5, 'artist': 'Thomas Smith', 'genre': 'R&B', 'release_date': '2005-12-02'}
+[2025-08-07T00:06:40.933+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Celestial', 'album': 'Static', 'length': 2, 'artist': 'Larry Farrell', 'genre': 'Metal', 'release_date': '2025-05-19'}
+[2025-08-07T00:06:40.933+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Aurora', 'album': 'Sanctuary', 'length': 1, 'artist': 'Jon Martinez', 'genre': 'Electronic', 'release_date': '1983-06-16'}
+[2025-08-07T00:06:40.943+0000] {music_kafka_operator.py:60} INFO - 10 transactions sent has been sent to kafka music_data!
+[2025-08-07T00:06:40.944+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connected> [IPv4 ('172.18.0.8', 19092)]>: Closing connection. 
+[2025-08-07T00:06:40.944+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=4 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.9', 19092)]>: Closing connection. 
+[2025-08-07T00:06:40.951+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-08-07T00:06:40.952+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=music_generator, task_id=generator_music_data, run_id=scheduled__2025-08-06T00:00:00+00:00, execution_date=20250806T000000, start_date=20250807T000640, end_date=20250807T000640
+[2025-08-07T00:06:40.983+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-07T00:06:40.994+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T00:06:40.994+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

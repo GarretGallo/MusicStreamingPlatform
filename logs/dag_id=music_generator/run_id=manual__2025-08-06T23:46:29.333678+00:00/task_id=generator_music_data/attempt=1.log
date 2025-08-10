@@ -1,0 +1,35 @@
+[2025-08-06T23:46:31.141+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-08-06T23:46:31.152+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: music_generator.generator_music_data manual__2025-08-06T23:46:29.333678+00:00 [queued]>
+[2025-08-06T23:46:31.159+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: music_generator.generator_music_data manual__2025-08-06T23:46:29.333678+00:00 [queued]>
+[2025-08-06T23:46:31.159+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-08-06T23:46:31.169+0000] {taskinstance.py:2890} INFO - Executing <Task(MusicProduceOperator): generator_music_data> on 2025-08-06 23:46:29.333678+00:00
+[2025-08-06T23:46:31.176+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1103) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-06T23:46:31.176+0000] {standard_task_runner.py:72} INFO - Started process 1104 to run task
+[2025-08-06T23:46:31.176+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'music_generator', 'generator_music_data', 'manual__2025-08-06T23:46:29.333678+00:00', '--job-id', '811', '--raw', '--subdir', 'DAGS_FOLDER/music_generator.py', '--cfg-path', '/tmp/tmp_yyn5_tk']
+[2025-08-06T23:46:31.178+0000] {standard_task_runner.py:105} INFO - Job 811: Subtask generator_music_data
+[2025-08-06T23:46:31.205+0000] {task_command.py:467} INFO - Running <TaskInstance: music_generator.generator_music_data manual__2025-08-06T23:46:29.333678+00:00 [running]> on host fa37cd2eaec1
+[2025-08-06T23:46:31.242+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='GGCODE' AIRFLOW_CTX_DAG_ID='music_generator' AIRFLOW_CTX_TASK_ID='generator_music_data' AIRFLOW_CTX_EXECUTION_DATE='2025-08-06T23:46:29.333678+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-06T23:46:29.333678+00:00'
+[2025-08-06T23:46:31.242+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-08-06T23:46:31.440+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connecting> [IPv4 ('172.18.0.7', 19092)]>: connecting to kafka-broker-1:19092 [('172.18.0.7', 19092) IPv4]
+[2025-08-06T23:46:31.444+0000] {conn.py:618} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <checking_api_versions_recv> [IPv4 ('172.18.0.7', 19092)]>: Broker version identified as 2.6
+[2025-08-06T23:46:31.446+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Connection complete.
+[2025-08-06T23:46:31.552+0000] {conn.py:396} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connecting> [IPv4 ('172.18.0.10', 19092)]>: connecting to kafka-broker-2:19092 [('172.18.0.10', 19092) IPv4]
+[2025-08-06T23:46:31.553+0000] {conn.py:457} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connected> [IPv4 ('172.18.0.10', 19092)]>: Connection complete.
+[2025-08-06T23:46:31.554+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka-broker-1:19092 <connected> [IPv4 ('172.18.0.7', 19092)]>: Closing connection. 
+[2025-08-06T23:46:31.557+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Nomad', 'album': 'Visions', 'length': 5, 'artist': 'Kathy Valentine', 'genre': 'Pop', 'release_date': '1974-02-26'}
+[2025-08-06T23:46:31.558+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Vortex', 'album': 'Islands', 'length': 2, 'artist': 'Daniel Clark', 'genre': 'Country', 'release_date': '2003-07-05'}
+[2025-08-06T23:46:31.559+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Eclipse', 'album': 'Threshold', 'length': 1, 'artist': 'Dr. Daniel Lopez', 'genre': 'Pop', 'release_date': '2004-06-28'}
+[2025-08-06T23:46:31.561+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Eclipse', 'album': 'Elysium', 'length': 3, 'artist': 'Justin Martin', 'genre': 'Jazz', 'release_date': '2025-02-16'}
+[2025-08-06T23:46:31.562+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Velocity', 'album': 'Visions', 'length': 3, 'artist': 'Christian Stout', 'genre': 'Rock', 'release_date': '1988-02-12'}
+[2025-08-06T23:46:31.563+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Anthem', 'album': 'Exodus', 'length': 1, 'artist': 'Alyssa Jackson', 'genre': 'Electronic', 'release_date': '1972-04-06'}
+[2025-08-06T23:46:31.564+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Whispers', 'album': 'Rebellion', 'length': 1, 'artist': 'Robert Martinez', 'genre': 'Jazz', 'release_date': '1986-11-04'}
+[2025-08-06T23:46:31.565+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Mirage', 'album': 'Elysium', 'length': 3, 'artist': 'Caroline Wilson', 'genre': 'Pop', 'release_date': '1982-07-21'}
+[2025-08-06T23:46:31.565+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Prism!', 'album': 'Exodus', 'length': 1, 'artist': 'Megan Dawson', 'genre': 'Country', 'release_date': '2007-01-10'}
+[2025-08-06T23:46:31.566+0000] {music_kafka_operator.py:57} INFO - Sent transaction {'song': 'Solace', 'album': 'Threshold', 'length': 1, 'artist': 'Veronica Whitaker', 'genre': 'Classical', 'release_date': '1973-12-15'}
+[2025-08-06T23:46:31.568+0000] {music_kafka_operator.py:60} INFO - 10 transactions sent has been sent to kafka music_data!
+[2025-08-06T23:46:31.568+0000] {conn.py:945} INFO - <BrokerConnection client_id=kafka-python-producer-1, node_id=5 host=kafka-broker-2:19092 <connected> [IPv4 ('172.18.0.10', 19092)]>: Closing connection. 
+[2025-08-06T23:46:31.580+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-08-06T23:46:31.580+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=music_generator, task_id=generator_music_data, run_id=manual__2025-08-06T23:46:29.333678+00:00, execution_date=20250806T234629, start_date=20250806T234631, end_date=20250806T234631
+[2025-08-06T23:46:31.604+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-08-06T23:46:31.612+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-06T23:46:31.613+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

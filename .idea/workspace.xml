@@ -6,20 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b9c588cc-f281-4d06-9d0f-3b7b626b5c54" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/account_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/account_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/artist_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/artist_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/music_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/music_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dags/streams_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/dags/streams_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobs/spark_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/spark_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/dag_processor_manager/dag_processor_manager.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dag_processor_manager/dag_processor_manager.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/scheduler/2025-08-04/account_generator.py.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/2025-08-04/account_generator.py.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/scheduler/2025-08-04/artist_generator.py.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/2025-08-04/artist_generator.py.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/scheduler/2025-08-04/music_generator.py.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/2025-08-04/music_generator.py.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/scheduler/2025-08-04/streams_generator.py.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/2025-08-04/streams_generator.py.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/scheduler/latest" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scheduler/latest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/account_kafka_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/account_kafka_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/artist_kafka_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/artist_kafka_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/music_kafka_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/music_kafka_operator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/streams_kafka_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/streams_kafka_operator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +96,12 @@
       <workItem from="1754335103228" duration="1221000" />
       <workItem from="1754336337296" duration="8031000" />
       <workItem from="1754344929727" duration="3090000" />
-      <workItem from="1754425615280" duration="8069000" />
+      <workItem from="1754425615280" duration="8317000" />
+      <workItem from="1754510990732" duration="8799000" />
+      <workItem from="1754589585453" duration="4910000" />
+      <workItem from="1754657569182" duration="16000" />
+      <workItem from="1754773783396" duration="6600000" />
+      <workItem from="1754827850326" duration="152000" />
     </task>
     <servers />
   </component>
