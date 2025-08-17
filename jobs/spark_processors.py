@@ -28,19 +28,19 @@ def main():
         StructField('email', StringType(), True),
         StructField('phone_number', StringType(), True),
         StructField('credit_card', StringType(), True),
-        StructField('dob', StringType(), True),
+        StructField('dob', DateType(), True),
         StructField('address', StringType(), True),
         StructField('city', StringType(), True),
         StructField('country', StringType(), True),
-        StructField('registration_date', StringType(), True)])
+        StructField('registration_date', DateType(), True)])
 
     artistSchema=StructType([
         StructField("account_id", StringType(), True),
         StructField('name', StringType(), True),
         StructField('biography', StringType(), True),
-        StructField('dob', StringType(), True),
-        StructField('city', StringType(), True),
+        StructField('dob', DateType(), True),
         StructField('country', StringType(), True),
+        StructField('city', StringType(), True),
         StructField('genre', StringType(), True),
         StructField('record_label', StringType(), True),
         StructField('number_albums', IntegerType(), True),
@@ -48,11 +48,11 @@ def main():
 
     musicSchema=StructType([
         StructField("song", StringType(), True),
-        StructField("album", StringType(), True),
-        StructField("length", IntegerType(), True),
         StructField("artist", StringType(), True),
+        StructField("album", IntegerType(), True),
+        StructField("length", IntegerType(), True),
         StructField("genre", StringType(), True),
-        StructField("release_date", StringType(), True)])
+        StructField("release_date", DateType(), True)])
 
     streamSchema=StructType([
         StructField("listener", StringType(), True),
@@ -60,7 +60,9 @@ def main():
         StructField("album", StringType(), True),
         StructField("genre", StringType(), True),
         StructField("artist", StringType(), True),
-        StructField("stream_date", StringType(), True)])
+        StructField("stream_date", DateType(), True),
+        StructField("stream_country", StringType(), True),
+        StructField("stream_city", StringType(), True)])
 
     def read_kafka_topic(topic, schema):
         return (spark.readStream
