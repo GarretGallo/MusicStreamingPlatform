@@ -2,7 +2,6 @@ from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 from kafka import KafkaProducer
 
-from datetime import datetime, timedelta
 import random
 import json
 
@@ -11,6 +10,16 @@ fake = Faker()
 
 GENRES = ["Rock", "Pop", "Hip-Hop", "Jazz", "Classical",
           "Electronic", "R&B", "Country", "Reggae", "Metal"]
+
+SONGS = ["Aurora", "Eclipse", "Pulse!", "Mirage", "Solstice", "Drift", "Echo?", "Horizon", "Ember", "Gravity",
+         "Cascade", "Velvet", "Spectrum", "Zenith", "Whispers", "Prism!", "Nomad", "Radiance", "Serenity", "Velocity",
+         "Phoenix", "Odyssey", "Infinity", "Mosaic", "Tempest", "Reverie", "Quantum", "Horizon!", "Solace", "Luminous",
+         "Fragment", "Silhouette", "Constellation", "Momentum", "Vapor", "Equinox", "Labyrinth", "Euphoria", "Vortex",
+         "Crescendo", "Aurora?", "Ember!", "Paradox", "Celestial", "Anthem", "Mirage?", "Pulse", "Nocturne", "Radiant", "Spectrum?"]
+
+ALBUMS = ["Rebellion", "Sanctuary", "Afterglow", "Nightfall", "Daybreak", "Static",
+          "Utopia", "Islands", "Threshold", "Limelight", "Paragon", "Visions",
+          "Elysium", "Exodus", "Ascension"]
 
 class MusicProduceOperator(BaseOperator):
     @apply_defaults
@@ -21,24 +30,18 @@ class MusicProduceOperator(BaseOperator):
         self.num_records = num_records
 
     def generate_music_data(self, row_num):
-        song = fake.word(ext_word_list=["Aurora", "Eclipse", "Pulse!", "Mirage", "Solstice", "Drift", "Echo?", "Horizon", "Ember", "Gravity",
-                                             "Cascade", "Velvet", "Spectrum", "Zenith", "Whispers", "Prism!", "Nomad", "Radiance", "Serenity", "Velocity",
-                                             "Phoenix", "Odyssey", "Infinity", "Mosaic", "Tempest", "Reverie", "Quantum", "Horizon!", "Solace", "Luminous",
-                                             "Fragment", "Silhouette", "Constellation", "Momentum", "Vapor", "Equinox", "Labyrinth", "Euphoria", "Vortex",
-                                             "Crescendo", "Aurora?", "Ember!", "Paradox", "Celestial", "Anthem", "Mirage?", "Pulse", "Nocturne", "Radiant", "Spectrum?"])
-        album = fake.word(ext_word_list=["Rebellion", "Sanctuary", "Afterglow", "Nightfall", "Daybreak", "Static",
-                                         "Utopia", "Islands", "Threshold", "Limelight", "Paragon", "Visions",
-                                         "Elysium", "Exodus", "Ascension"])
-        length = random.randint(1, 5)
+        song = random.choice(SONGS)
         artist = fake.name()
+        album = fake.choice(ALBUMS)
+        length = random.randint(1, 5)
         genre = random.choice(GENRES)
         release_date = fake.date(pattern="%Y-%m-%d")
 
         music = {
             'song': song,
+            'artist': artist,
             'album': album,
             'length': length,
-            'artist': artist,
             'genre': genre,
             'release_date': release_date,
         }
