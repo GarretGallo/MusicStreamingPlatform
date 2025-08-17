@@ -5,10 +5,30 @@ from faker import Faker
 
 import random
 import json
+
 fake = Faker()
 
 GENRES = ["Rock", "Pop", "Hip-Hop", "Jazz", "Classical",
           "Electronic", "R&B", "Country", "Reggae", "Metal"]
+
+SONGS = ["Aurora", "Eclipse", "Pulse!", "Mirage", "Solstice", "Drift", "Echo?", "Horizon", "Ember", "Gravity",
+         "Cascade", "Velvet", "Spectrum", "Zenith", "Whispers", "Prism!", "Nomad", "Radiance", "Serenity", "Velocity",
+         "Phoenix", "Odyssey", "Infinity", "Mosaic", "Tempest", "Reverie", "Quantum", "Horizon!", "Solace", "Luminous",
+         "Fragment", "Silhouette", "Constellation", "Momentum", "Vapor", "Equinox", "Labyrinth", "Euphoria", "Vortex",
+         "Crescendo", "Aurora?", "Ember!", "Paradox", "Celestial", "Anthem", "Mirage?", "Pulse", "Nocturne", "Radiant",
+         "Spectrum?"]
+
+ALBUMS = ["Rebellion", "Sanctuary", "Afterglow", "Nightfall", "Daybreak", "Static",
+          "Utopia", "Islands", "Threshold", "Limelight", "Paragon", "Visions",
+          "Elysium", "Exodus", "Ascension"]
+
+LOCATIONS = {
+    "United States": ["New York", "Los Angeles", "Chicago"],
+    "France": ["Paris", "Marseille", "Lyon"],
+    "Japan": ["Tokyo", "Osaka", "Kyoto"],
+    "Brazil": ["São Paulo", "Rio de Janeiro", "Brasília"],
+    "Australia": ["Sydney", "Melbourne", "Brisbane"]
+}
 
 class StreamProduceOperator(BaseOperator):
     @apply_defaults
@@ -20,17 +40,13 @@ class StreamProduceOperator(BaseOperator):
 
     def generate_streams_data(self, row_num):
         listener = fake.name()
-        song = fake.word(ext_word_list=["Aurora", "Eclipse", "Pulse!", "Mirage", "Solstice", "Drift", "Echo?", "Horizon", "Ember", "Gravity",
-                                             "Cascade", "Velvet", "Spectrum", "Zenith", "Whispers", "Prism!", "Nomad", "Radiance", "Serenity", "Velocity",
-                                             "Phoenix", "Odyssey", "Infinity", "Mosaic", "Tempest", "Reverie", "Quantum", "Horizon!", "Solace", "Luminous",
-                                             "Fragment", "Silhouette", "Constellation", "Momentum", "Vapor", "Equinox", "Labyrinth", "Euphoria", "Vortex",
-                                             "Crescendo", "Aurora?", "Ember!", "Paradox", "Celestial", "Anthem", "Mirage?", "Pulse", "Nocturne", "Radiant", "Spectrum?"])
-        album = fake.word(ext_word_list=["Rebellion", "Sanctuary", "Afterglow", "Nightfall", "Daybreak", "Static",
-                                         "Utopia", "Islands", "Threshold", "Limelight", "Paragon", "Visions",
-                                         "Elysium", "Exodus", "Ascension"])
+        song = random.choice(SONGS)
+        album = random.choice(ALBUMS)
         genre = random.choice(GENRES)
         artist = fake.name()
         stream_date = fake.date_between(start_date="-1y", end_date="+30d")
+        stream_country = random.choice(list(LOCATIONS.keys()))
+        stream_city = random.choice(LOCATIONS[stream_country])
 
         stream = {
             'listener': listener,
@@ -38,7 +54,9 @@ class StreamProduceOperator(BaseOperator):
             'album': album,
             'genre': genre,
             'artist': artist,
-            'stream_date': stream_date.isoformat(),
+            'stream_date': stream_date,
+            'stream_country': stream_country,
+            'stream_city': stream_city,
         }
         return stream
 
