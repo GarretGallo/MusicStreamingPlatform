@@ -1,4 +1,4 @@
-from airflow.models import BaseOperator
+m airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 from kafka import KafkaProducer
 from faker import Faker
@@ -54,7 +54,7 @@ class StreamProduceOperator(BaseOperator):
             'album': album,
             'genre': genre,
             'artist': artist,
-            'stream_date': stream_date,
+            'stream_date': stream_date.isoformat(),
             'stream_country': stream_country,
             'stream_city': stream_city,
         }
