@@ -32,7 +32,7 @@ class MusicProduceOperator(BaseOperator):
     def generate_music_data(self, row_num):
         song = random.choice(SONGS)
         artist = fake.name()
-        album = fake.choice(ALBUMS)
+        album = random.choice(ALBUMS)
         length = random.randint(1, 5)
         genre = random.choice(GENRES)
         release_date = fake.date(pattern="%Y-%m-%d")
