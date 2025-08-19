@@ -42,7 +42,7 @@ class AccountProduceOperator(BaseOperator):
             'email': email,
             'phone_number': phone_number,
             'credit_card': credit_card,
-            'dob': dob,
+            'dob': dob.isoformat(),
             'address': address,
             'city': city,
             'country': country,
@@ -59,11 +59,6 @@ class AccountProduceOperator(BaseOperator):
 
         for row_num in range(1, self.num_records+1):
             transaction = self.generate_account_data(row_num)
-            producer.send(self.kafka_topic, value=transaction)
-            self.log.info(f"Sent transaction {transaction}")
-
-        producer.flush()
-        self.log.info(f"{self.num_records} transactions sent has been sent to kafka {self.kafka_topic}!")
             producer.send(self.kafka_topic, value=transaction)
             self.log.info(f"Sent transaction {transaction}")
 
