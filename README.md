@@ -4,5 +4,5 @@ This project simulates the data infrastructure of a modern music streaming platf
 
 One of my goals with this project was to continue to build upon my fundamentals that I have been learning in my AWS Certifcation Courses, as well as in my previous Smart City Project. With implementation of the Medallion Architecture as well as basic automation, I can say that this smaller personal goal was achieved.
 
-*More detailed documentation can be seen in my Meduim Linked below*
+**More detailed documentation can be seen in my Meduim Linked below**
 *https://medium.com/@garretgallo17/music-streaming-etl-pipeline-documentation-f49d1c4d6b9c*
